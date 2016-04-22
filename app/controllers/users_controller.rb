@@ -39,6 +39,8 @@ class UsersController < ApplicationController
     @msg = 'Follower'
     @follows = @user.follower_users
     render 'follows'
+  end
+
   def edit
     @user = User.find(params[:id])
   end

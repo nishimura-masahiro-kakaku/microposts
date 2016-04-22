@@ -1,0 +1,27 @@
+user1:
+  id: 1
+  name: user_1
+  email: foo1@bar.com
+  area: area1
+  password_digest: $2a$10$FJ9jaSsenumZOZHib3jwVOopvQjHtW7o.O5uNaX3EVrcozscb4vK2
+
+user2:
+  id: 2
+  name: user_2
+  email: foo2@bar.com
+  area: area2
+  password_digest: $2a$10$FJ9jaSsenumZOZHib3jwVOopvQjHtW7o.O5uNaX3EVrcozscb4vK2
+
+user3:
+  id: 3
+  name: user_3
+  email: foo3@bar.com
+  area: area3
+  password_digest: $2a$10$FJ9jaSsenumZOZHib3jwVOopvQjHtW7o.O5uNaX3EVrcozscb4vK2
+
+user4:
+  id: 4
+  name: user_4
+  email: foo4@bar.com
+  area: area4
+  password_digest: $2a$10$FJ9jaSsenumZOZHib3jwVOopvQjHtW7o.O5uNaX3EVrcozscb4vK2
