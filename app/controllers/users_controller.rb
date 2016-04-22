@@ -37,12 +37,13 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password,
+    params.require(:user).permit(:name, :email, :area, :password,
                                  :password_confirmation)
   end
 
   def authenticate?
-    if session[:user_id].to_i != params[:id].to_i
+    @user = User.find(params[:id])
+    if @user != current_user
       flash[:warning] = "Not authenticate"
       redirect_to root_path
     end
