@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
+  before_action :set_user, only: [:show, :followings, :followers]
+
   def show
-    @user = User.find(params[:id])
     @microposts = @user.microposts.order(created_at: :desc)
   end
 
@@ -27,7 +28,23 @@ class UsersController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
+  def followings
+    @msg = 'Following'
+    @follows = @user.following_users
+    render 'follows'
+  end
+
+  def followers
+    @msg = 'Follower'
+    @follows = @user.follower_users
+    render 'follows'
+  end
+
   private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
