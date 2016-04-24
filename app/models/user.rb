@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
     end
 
     def favorite(post)
-        favorete_posts.find_or_create_by(post_id: post.id)
+        favorite_posts.find_or_create_by(post_id: post.id)
     end
 
     def unfavorite(post)

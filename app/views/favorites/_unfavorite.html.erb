@@ -1,0 +1,5 @@
+<%= form_for(current_user.favorite_posts.find_by(post_id: micropost.id), remote: true,
+             html: { method: :delete }) do |f| %>
+  <%= hidden_field_tag :post_id, micropost.id %>
+  <%= image_submit_tag("favorite.png", class: 'favorite_button', alt: 'Unfavorite') %>
+<% end %>

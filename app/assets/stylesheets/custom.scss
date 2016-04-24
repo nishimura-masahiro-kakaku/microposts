@@ -202,3 +202,34 @@ span.picture {
     padding-top: 0;
   }
 }
+
+
+.favorite_button {
+  border: initial;
+  margin-bottom: initial;
+  margin-left: 5px;
+  width: 20px;
+}
+
+.new_favorite {
+ display: inline;
+}
+
+.stats {
+  margin-top: 10px;
+  padding-top: 10px;
+
+  p {
+    font-size: 14px;
+    line-height: 1em;
+  }
+
+  .info_box {
+    text-align: center;
+    float: left;
+  }
+
+  .lbl {
+    font-size: 12px;
+  }
+}

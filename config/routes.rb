@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
+      get :favorites
     end
   end
   resources :sessions, only: [:new, :create, :destroy]

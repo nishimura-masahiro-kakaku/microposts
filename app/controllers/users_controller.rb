@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   before_action :authenticate?, only: [:edit, :update, :destroy]
-  before_action :set_user, only: [:show, :followings, :followers]
+  before_action :set_user, only: [:show, :followings, :followers, :favorites
+  ]
 
   def show
     @microposts = @user.microposts.order(created_at: :desc)
@@ -53,6 +54,11 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def favorites
+    @msg = 'Favorite Posts'
+    @feed_items = @user.favorite_microposts
   end
 
   private

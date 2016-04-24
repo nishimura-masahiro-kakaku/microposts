@@ -1,8 +1,24 @@
+<% user = @user ||  current_user %>
 <div>
-<%= link_to gravatar_for(current_user, size: 50), current_user %>
-<h1><%= current_user.name %></h1>
-<span><%= link_to "view my profile", current_user %></span>
+<%= link_to gravatar_for(current_user, size: 50), user %>
+<h1><%= user.name %></h1>
+<span><%= link_to "view my profile", user %></span>
 </div>
-<span style="clear: both"><%= link_to 'follwings', followings_user_path(current_user) %></span>
-<span><%= link_to 'follwers', followers_user_path(current_user) %></span>
-<span><%= pluralize(current_user.microposts.count, "micropost") %></span>
+<div class="stats" style="clear: both">
+  <div class="info_box col-md-3">
+    <p class="lbl"><%= link_to "つぶやき", user %></p>
+    <p><%= link_to user.microposts.count, user %></p>
+  </div>
+  <div class="info_box col-md-3">
+  <p class="lbl"><%= link_to  'フォロー', followings_user_path(user) %></p>
+  <p><%= link_to user.following_relationships.count, followings_user_path(user) %></p>
+  </div>
+  <div class="info_box col-md-3">
+  <p class="lbl"><%= link_to 'フォロワー', followers_user_path(user) %></p>
+  <p><%= link_to user.follower_relationships.count, followers_user_path(user) %></p>
+  </div>
+  <div class="info_box col-md-3">
+  <p class="lbl"><%= link_to 'お気に入り', favorites_user_path(user) %></p>
+  <p><%= link_to user.favorite_posts.count, favorites_user_path(user) %></p>
+  </div>
+</div>
