@@ -1,4 +1,7 @@
 <li id="follow-<%= user.id %>">
   <%= link_to gravatar_for(user, size: 20), user %>
   <span class="user"><%= link_to user.name, user %></span>
+  <span><%= link_to "つぶやき(#{user.microposts.count})", user %></span>
+  <span><%= link_to "フォロー(#{user.following_relationships.count})", followers_user_path(user) %></span>
+  <span><%= link_to "フォロワー(#{user.follower_relationships.count})", followings_user_path(user) %></span>
 </li>
